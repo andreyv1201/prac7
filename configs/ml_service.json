@@ -1,0 +1,1 @@
+{"state_dir":"runtime/ml_service","storage_url":"http://127.0.0.1:8102","torch_threads":2,"hidden_size":32,"latent_size":8,"batch_size":128,"learning_rate":0.001}

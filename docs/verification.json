@@ -1,0 +1,83 @@
+[
+  {
+    "sensor": "66584fddd2a6d39f779af0a3",
+    "model_id": "1fd3c16d802c479bbc3630615591558f",
+    "version": "1fd3c16d",
+    "best_epoch": 113,
+    "fit_seconds": 72.82,
+    "metrics": {
+      "labeled_points": 6585,
+      "positive_points": 2414,
+      "tp": 2322,
+      "fp": 308,
+      "fn": 92,
+      "tn": 3863,
+      "precision": 0.8828897338403042,
+      "recall": 0.9618889809444905,
+      "f1": 0.9206978588421887,
+      "f0_5": 0.8976341425699706,
+      "f2": 0.9449780237668891,
+      "average_precision": 0.9508111070370161,
+      "roc_auc": 0.9766714861779872
+    },
+    "run_id": "89141b93bec64a438209e28b76368686",
+    "scored_points": 6585,
+    "skipped_points": 759,
+    "start": "2025-07-20T00:00:00Z",
+    "end": "2025-09-09T00:00:00Z"
+  },
+  {
+    "sensor": "66584fddd2a6d39f779af0a5",
+    "model_id": "2b981d4c5d5440afa1250466816dffc6",
+    "version": "2b981d4c",
+    "best_epoch": 106,
+    "fit_seconds": 74.17,
+    "metrics": {
+      "labeled_points": 6585,
+      "positive_points": 2892,
+      "tp": 2739,
+      "fp": 271,
+      "fn": 153,
+      "tn": 3422,
+      "precision": 0.9099667774086379,
+      "recall": 0.9470954356846473,
+      "f1": 0.9281599457810912,
+      "f0_5": 0.9171577819448165,
+      "f2": 0.9394292769927288,
+      "average_precision": 0.8837002163063189,
+      "roc_auc": 0.9517784197159668
+    },
+    "run_id": "3ca197575aec462c9819f63eadcd81b9",
+    "scored_points": 6585,
+    "skipped_points": 759,
+    "start": "2025-07-20T00:00:00Z",
+    "end": "2025-09-09T00:00:00Z"
+  },
+  {
+    "sensor": "66584fddd2a6d39f779af0a9",
+    "model_id": "7c0d3dd39fa04b9ba486ac7bdd998690",
+    "version": "7c0d3dd3",
+    "best_epoch": 88,
+    "fit_seconds": 74.28,
+    "metrics": {
+      "labeled_points": 6585,
+      "positive_points": 2829,
+      "tp": 2325,
+      "fp": 339,
+      "fn": 504,
+      "tn": 3417,
+      "precision": 0.8727477477477478,
+      "recall": 0.8218451749734889,
+      "f1": 0.8465319497542326,
+      "f0_5": 0.8620689655172413,
+      "f2": 0.8315450643776824,
+      "average_precision": 0.7612353534566025,
+      "roc_auc": 0.917606085006537
+    },
+    "run_id": "76f687204dee4355b416df9fbe574c4d",
+    "scored_points": 6585,
+    "skipped_points": 759,
+    "start": "2025-07-20T00:00:00Z",
+    "end": "2025-09-09T00:00:00Z"
+  }
+]

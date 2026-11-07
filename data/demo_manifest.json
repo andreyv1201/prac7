@@ -1,0 +1,32 @@
+{
+  "source": "Local IQDS research copy: mv_cond_temperature.csv + labled_mv_cond.csv",
+  "original_measurement_rows": 426638,
+  "original_label_rows": 426638,
+  "original_source_sha256": {
+    "mv_cond_temperature.csv": "ccff4e78e7901027d99770b177879190a23fe016a4ef9e6124c482e0471aefa5",
+    "labled_mv_cond.csv": "3825739e63fcf6a665473a606a598f8720dcf1a25149af8512a0db3471f482e7"
+  },
+  "rows": 38016,
+  "sensors": {
+    "66584fddd2a6d39f779af0a3": "Температура · контур 1",
+    "66584fddd2a6d39f779af0a5": "Температура · контур 2",
+    "66584fddd2a6d39f779af0a9": "Температура · контур 3"
+  },
+  "unit": "°C",
+  "timezone": "UTC",
+  "start": "2025-06-13T00:00:00Z",
+  "end": "2025-09-08T23:50:00Z",
+  "step_seconds": 600,
+  "aggregation": "Mean values and max labels in (t-10min, t], timestamp at right edge.",
+  "missing_values": 126,
+  "missing_labels": 126,
+  "sha256": "513bb4d41d3e1a47bfee9c0d55803a86e9eed3c3e63ca435d41ca1ca8be4ff4b",
+  "defaults": {
+    "train_start": "2025-06-13",
+    "train_end": "2025-06-22",
+    "calibration_end": "2025-06-29",
+    "test_start": "2025-07-20",
+    "test_end": "2025-09-09"
+  },
+  "evaluation_note": "Demonstration on previously used research periods; not independent external validation."
+}

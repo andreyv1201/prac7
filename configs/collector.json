@@ -1,0 +1,1 @@
+{"state_dir":"runtime/collector","sources":{"iqds-demo":{"name":"IQDS · климатическое оборудование","path":"data/iqds_demo.csv","manifest":"data/demo_manifest.json"}},"batch_size":5000}

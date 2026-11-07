@@ -1,0 +1,8 @@
+.venv
+runtime
+tmp
+.git
+**/__pycache__
+.pytest_cache
+*.pdf
+output

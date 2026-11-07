@@ -1,0 +1,1 @@
+{"state_dir":"runtime/web_master","collector_url":"http://127.0.0.1:8101","storage_url":"http://127.0.0.1:8102","ml_url":"http://127.0.0.1:8103","batch_size":5000,"max_upload_bytes":15000000}

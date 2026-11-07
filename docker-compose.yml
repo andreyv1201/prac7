@@ -1,0 +1,73 @@
+name: kontur-hvac
+
+x-common: &common
+  restart: unless-stopped
+  healthcheck:
+    test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health',timeout=3)"]
+    interval: 10s
+    timeout: 5s
+    retries: 6
+    start_period: 15s
+
+services:
+  collector:
+    <<: *common
+    image: kontur-hvac-collector:local
+    build: {context: ., dockerfile: collector/Dockerfile}
+    environment: {STATE_DIR: /state, SERVICE_CONFIG: /app/configs/collector.json}
+    volumes: ["collector-state:/state"]
+    ports: ["127.0.0.1:${COLLECTOR_PORT:-8101}:8000"]
+  storage:
+    <<: *common
+    image: kontur-hvac-storage:local
+    build: {context: ., dockerfile: storage/Dockerfile}
+    environment: {STATE_DIR: /state, SERVICE_CONFIG: /app/configs/storage.json}
+    volumes: ["storage-state:/state"]
+    ports: ["127.0.0.1:${STORAGE_PORT:-8102}:8000"]
+  ml:
+    <<: *common
+    image: kontur-hvac-ml:local
+    build: {context: ., dockerfile: ml_service/Dockerfile}
+    environment:
+      STATE_DIR: /state
+      SERVICE_CONFIG: /app/configs/ml_service.json
+      STORAGE_URL: http://storage:8000
+    volumes: ["ml-state:/state"]
+    ports: ["127.0.0.1:${ML_PORT:-8103}:8000"]
+    depends_on:
+      storage: {condition: service_healthy}
+  master:
+    <<: *common
+    image: kontur-hvac-master:local
+    build: {context: ., dockerfile: web_master/Dockerfile}
+    environment:
+      STATE_DIR: /state
+      SERVICE_CONFIG: /app/configs/web_master.json
+      STORAGE_URL: http://storage:8000
+      COLLECTOR_URL: http://collector:8000
+      ML_URL: http://ml:8000
+    volumes: ["master-state:/state"]
+    ports: ["127.0.0.1:${MASTER_PORT:-8104}:8000"]
+    depends_on:
+      collector: {condition: service_healthy}
+      storage: {condition: service_healthy}
+      ml: {condition: service_healthy}
+  visualization:
+    <<: *common
+    image: kontur-hvac-visualization:local
+    build: {context: ., dockerfile: visualization/Dockerfile}
+    environment:
+      STATE_DIR: /state
+      SERVICE_CONFIG: /app/configs/visualization.json
+      MASTER_URL: http://master:8000
+    volumes: ["visualization-state:/state"]
+    ports: ["127.0.0.1:${UI_PORT:-8050}:8000"]
+    depends_on:
+      master: {condition: service_healthy}
+
+volumes:
+  collector-state:
+  storage-state:
+  ml-state:
+  master-state:
+  visualization-state:
